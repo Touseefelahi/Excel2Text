@@ -121,17 +121,11 @@ namespace Excel2Text
                               "Then save that file if required";
         }
 
-        private void labelEmail_Click(object sender, EventArgs e)
+        private static void labelEmail_Click(object sender, EventArgs e)
         {
-            //link to blog/website
-            try11();
+            var url = "http://touseefelahiblog.wordpress.com";
+            System.Diagnostics.Process.Start(url);
         }
-
-        private void try11()
-        {
-        }
-        public void try22()
-        {
-        }
+        
     }
 }

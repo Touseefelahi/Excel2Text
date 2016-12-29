@@ -31,16 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(String2CSV));
             this.textBoxHexValues = new System.Windows.Forms.RichTextBox();
             this.textBoxCSV = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelIndexValue = new System.Windows.Forms.Label();
+            this.labelCSVFile = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.buttonSaveCSVFile = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxFloating = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxHexValues
@@ -71,28 +73,28 @@
             this.textBoxCSV.TabIndex = 1;
             this.textBoxCSV.Text = "";
             // 
-            // label1
+            // labelIndexValue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(1, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Indexed Hex Values";
+            this.labelIndexValue.AutoSize = true;
+            this.labelIndexValue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIndexValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.labelIndexValue.Location = new System.Drawing.Point(1, 9);
+            this.labelIndexValue.Name = "labelIndexValue";
+            this.labelIndexValue.Size = new System.Drawing.Size(93, 15);
+            this.labelIndexValue.TabIndex = 2;
+            this.labelIndexValue.Text = "Indexed Values";
             // 
-            // label2
+            // labelCSVFile
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(743, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "CSV File";
+            this.labelCSVFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCSVFile.AutoSize = true;
+            this.labelCSVFile.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCSVFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.labelCSVFile.Location = new System.Drawing.Point(743, 9);
+            this.labelCSVFile.Name = "labelCSVFile";
+            this.labelCSVFile.Size = new System.Drawing.Size(53, 15);
+            this.labelCSVFile.TabIndex = 3;
+            this.labelCSVFile.Text = "CSV File";
             // 
             // splitContainer1
             // 
@@ -134,10 +136,24 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.checkBoxFloating);
             this.panel1.Location = new System.Drawing.Point(1, 488);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(809, 28);
             this.panel1.TabIndex = 5;
+            // 
+            // checkBoxFloating
+            // 
+            this.checkBoxFloating.AutoSize = true;
+            this.checkBoxFloating.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFloating.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkBoxFloating.Location = new System.Drawing.Point(1, 7);
+            this.checkBoxFloating.Name = "checkBoxFloating";
+            this.checkBoxFloating.Size = new System.Drawing.Size(166, 18);
+            this.checkBoxFloating.TabIndex = 6;
+            this.checkBoxFloating.Text = "Float to Short Conversion";
+            this.checkBoxFloating.UseVisualStyleBackColor = true;
+            this.checkBoxFloating.CheckedChanged += new System.EventHandler(this.checkBoxFloating_CheckedChanged);
             // 
             // String2CSV
             // 
@@ -145,8 +161,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(801, 516);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelIndexValue);
+            this.Controls.Add(this.labelCSVFile);
             this.Controls.Add(this.buttonSaveCSVFile);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
@@ -160,6 +176,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,11 +187,12 @@
 
         private System.Windows.Forms.RichTextBox textBoxHexValues;
         private System.Windows.Forms.RichTextBox textBoxCSV;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelIndexValue;
+        private System.Windows.Forms.Label labelCSVFile;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button buttonSaveCSVFile;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBoxFloating;
     }
 }

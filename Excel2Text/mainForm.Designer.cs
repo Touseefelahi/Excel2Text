@@ -187,6 +187,7 @@
             // 
             // labelEmail
             // 
+            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.SystemColors.Control;
@@ -195,7 +196,7 @@
             this.labelEmail.Size = new System.Drawing.Size(126, 14);
             this.labelEmail.TabIndex = 8;
             this.labelEmail.Text = "TouseefElahi@ymail.com";
-            this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
+            this.labelEmail.Click += new System.EventHandler(mainForm.labelEmail_Click);
             // 
             // mainForm
             // 
